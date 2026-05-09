@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Harry IELTS Navigator - Unit 6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              hin: {
+                blue: '#0A2463', // Matches --hin-blue
+                gold: '#FFD200', // Matches --hin-gold
+                'gold-dark': '#FDB813', // Matches --hin-gold-dark
+              },
+              bg: {
+                main: '#f4f7f9', // Matches --bg-color
+                sidebar: '#ffffff', // Matches --sidebar-bg
+                active: '#eef2f5', // Matches --active-bg
+              },
+              status: {
+                success: '#28a745', // Matches --success-color
+                warning: '#ffc107', // Matches --warning-color
+                danger: '#dc3545', // Matches --danger-color
+              }
+            },
+            fontFamily: {
+              heading: ['Montserrat', 'sans-serif'], // Matches --font-heading
+              body: ['Roboto', 'sans-serif'], // Matches --font-body
+            },
+            animation: {
+              'slide-in': 'slideIn 0.3s ease-out forwards',
+              'progress': 'progress linear forwards',
+              'bounce-short': 'bounceShort 0.5s ease-in-out 1',
+              'shake': 'shake 0.4s ease-in-out 1',
+            },
+            keyframes: {
+              slideIn: {
+                '0%': { transform: 'translateX(100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' },
+              },
+              progress: {
+                '0%': { width: '100%' },
+                '100%': { width: '0%' },
+              },
+              bounceShort: {
+                 '0%, 100%': { transform: 'translateY(0)' },
+                 '50%': { transform: 'translateY(-10px)' },
+              },
+              shake: {
+                '0%, 100%': { transform: 'translateX(0)' },
+                '25%': { transform: 'translateX(-5px)' },
+                '75%': { transform: 'translateX(5px)' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #aaa;
+      }
+      .anim-fade-in {
+        animation: fadeIn 0.4s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      /* Ensure text areas and inputs don't zoom on iOS */
+      input, textarea, select {
+        font-size: 16px;
+      }
+
+      /* Markdown Content Styling - Improved */
+      .markdown-content {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .markdown-content table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 1em 0;
+        font-size: 0.95em;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+      }
+      .markdown-content th {
+        background-color: #f3f4f6;
+        color: #0A2463;
+        font-weight: 800;
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #e5e7eb;
+      }
+      .markdown-content td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e7eb;
+        background-color: white;
+      }
+      .markdown-content tr:last-child td {
+        border-bottom: none;
+      }
+      .markdown-content strong {
+        color: #0A2463;
+        font-weight: 700;
+      }
+      .markdown-content ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      .markdown-content p {
+        margin-bottom: 0.75em;
+      }
+      
+      /* Confetti Animation for Congrats Modal */
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #FFD200;
+        animation: confetti-fall 3s linear infinite;
+        top: -10px;
+      }
+      @keyframes confetti-fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+      
+      /* Text Shadow */
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.45.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-bg-main text-gray-800 font-body">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
